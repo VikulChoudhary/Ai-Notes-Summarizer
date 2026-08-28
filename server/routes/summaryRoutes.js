@@ -1,18 +1,8 @@
 const express = require("express");
+const { summarize } = require("../controllers/summaryController");
 
 const router = express.Router();
 
-router.post("/summarize", (req, res) => {
-
-    const { notes } = req.body;
-
-    console.log("Notes received:", notes);
-
-    res.json({
-        message: "Notes received successfully!",
-        summary: "This is a test summary."
-    });
-
-});
+router.post("/summarize", summarize);
 
 module.exports = router;
